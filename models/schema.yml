@@ -1,13 +1,11 @@
 version : 2
 
-sources:
-    - name: fraud_dataset
-      description : "database online payment"
-      database: strategic-kite-363002
-      schema : fraud_dataset
-      tables:
-        - name : fraud_dataset_final
-
 models:
-  - name: source-table
-    description: transformed table from batch processing table
+  - name: fraud_data_only
+    description: data froud only
+    columns:
+      - name: isFraud
+        description: fraud detection
+        tests:
+          - accepted_values:
+              values: [1,0]
