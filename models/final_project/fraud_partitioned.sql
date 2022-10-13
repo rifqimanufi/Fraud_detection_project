@@ -2,15 +2,23 @@
     config(
         materialized='table',
         partition_by={
-            'field': 'datetime',
-            'data_type': 'timestamp',
-            'granularity': 'hour'
+            'field': 'date',
+            'data_type': 'date',
+            'granularity': 'day'
         },
         cluster_by = 'type'
     )
 }}
 
   SELECT
-    *
+    date,
+    type,
+    senderID,
+    oldbalanceSend,
+    newbalanceSend,
+    receiverID,
+    oldbalancereceive,
+    newbalancereceive,
+    isFraud
   FROM
-    {{ ref('src_fraud_data') }}
+    {{ ref('fraud_fix') }}
