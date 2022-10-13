@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: fraud_dataset
+    schema: fraud_dataset
+    tables:
+      - name: fraud_dataset_final
+        identifier: fraud_dataset_final
