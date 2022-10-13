@@ -5,7 +5,15 @@ models:
     description: data froud only
     columns:
       - name: isFraud
-        description: fraud detection
+        description: data categorized by fraud
         tests:
           - accepted_values:
               values: [1,0]
+
+  - name: fraud_data_filtered
+    description: data has been filtered
+    columns:
+      - name: amount
+        description: total transaction by time
+        tests:
+          - not_null
