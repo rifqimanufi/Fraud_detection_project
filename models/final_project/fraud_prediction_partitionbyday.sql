@@ -13,12 +13,7 @@
   SELECT
     date,
     type,
-    senderID,
-    oldbalanceSend,
-    newbalanceSend,
-    receiverID,
-    oldbalancereceive,
-    newbalancereceive,
-    isFraud
+    isFraud,
+    isFlaggedFraud
   FROM
     {{ ref('fraud_fix') }}
